@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="./favicon.png" />
+    <title>spinner</title>
+    <style>
+      .spinner-body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100vh;
+      }
+      .spinner {
+        width: 80px;
+        height: 80px;
+        position: relative;
+      }
+      .dot {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        animation: spin 2s infinite;
+      }
+      .spinner .dot::after {
+        content: "";
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: #000;
+      }
+      .spinner .dot:nth-child(2) {
+        animation-delay: 100ms;
+      }
+      .spinner .dot:nth-child(3) {
+        animation-delay: 200ms;
+      }
+      .spinner .dot:nth-child(4) {
+        animation-delay: 300ms;
+      }
+      .spinner .dot:nth-child(5) {
+        animation-delay: 400ms;
+      }
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="spinner-body">
+      <div class="spinner">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+    </div>
+  </body>
+</html>
